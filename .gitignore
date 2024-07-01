@@ -4,6 +4,7 @@ Build/
 Intermediate/
 Saved/
 DerivedDataCache/
+*_BuiltData.uasset
 
 # Download from https://developer.picoxr.com/resources/#sdk
 Plugins/OnlineSubsystemPICO

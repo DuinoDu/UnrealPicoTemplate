@@ -1,0 +1,27 @@
+[env]
+NAME = "{{program-name}}"
+PROJECT = "${PWD}/${NAME}.uproject"
+
+[tasks.install]
+command = "adb"
+args = ["install", "-r", "-d", "Binaries/Android/${NAME}-arm64.apk"]
+
+# [tasks.build]
+# script = "${BUILD_SH}"
+# -ScriptsForProject=F:/ue_projects/UnrealPicoTemplate/UnrealPicoTemplate.uproject BuildCookRun -nocompileeditor -installed -nop4 -project=F:/ue_projects/UnrealPicoTemplate/UnrealPicoTemplate.uproject -cook -stage -archive -archivedirectory=F:/ue_projects/UnrealPicoTemplate/DerivedDataCache -package
+# -ue4exe="C:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor-Cmd.exe" -compressed -ddc=InstalledDerivedDataBackendGraph -pak -prereqs -nodebuginfo -targetplatform=Android -cookflavor=ASTC -build -clientconfig=Development -utf8output
+
+# [tasks.launch]
+# script = '''
+# cd /mnt/c/Program\ Files/Epic\ Games/UE_4.27/Engine/Binaries/Win64
+# ./UE4Editor.exe ${PROJECT_WIN}
+# '''
+
+[tasks.clean]
+command = "rm"
+args = ["-r", "Binaries", "Build", "DerivedDataCache", "Intermediate", "Saved", "Plugins", "Script"] 
+
+[tasks.recover]
+script = '''
+mv *.uproject \{\{project-name\}\}.uproject
+'''
