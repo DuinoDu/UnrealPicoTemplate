@@ -1,0 +1,12 @@
+# unreal stuff
+Binaries/
+Build/
+Intermediate/
+Saved/
+DerivedDataCache/
+
+# Download from https://developer.picoxr.com/resources/#sdk
+Plugins/OnlineSubsystemPICO
+Plugins/PICOEnterprise
+Plugins/PICOXR
+Plugins/PicoSpatialAudio
