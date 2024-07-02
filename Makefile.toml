@@ -10,6 +10,13 @@ args = ["install", "-r", "-d", "Binaries/Android/${NAME}-arm64.apk"]
 command = "rm"
 args = ["-r", "Binaries", "Build", "DerivedDataCache", "Intermediate", "Saved", "Plugins", "Script"] 
 
+[tasks.download_picosdk]
+script = '''
+wget https://sdk.picovr.com/developer-platform/sdk/PICO%20Unreal%20Integration%20SDK_250.zip -O picosdk_v250.zip
+unzip picosdk_v250.zip -d picosdk_v250
+cp -r picosdk_v250/UE_4.27/Plugins .
+'''
+
 [tasks.recover]
 script = '''
 mv *.uproject \{\{project-name\}\}.uproject
